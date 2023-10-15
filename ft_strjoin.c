@@ -44,11 +44,7 @@ char	*ft_strjoin(char const *s1, char const *s2)
 {
 	char	*dest;
 	size_t	total_ln;
-	size_t	i;
-	size_t	j;
 
-	i = 0;
-	j = 0;
 	total_ln = ft_strlen(s1) + ft_strlen(s2);
 	dest = malloc((total_ln + 1) * sizeof(char));
 	if (dest == NULL)

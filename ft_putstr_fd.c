@@ -17,5 +17,8 @@ void	ft_putstr_fd(char *s, int fd)
 	if (!s)
 		return (ft_putstr_fd("(null)", fd));
 	while (*s)
-		ft_putchar_fd(s++, fd);
+	{
+		ft_putchar_fd(*s, fd);
+		s++;
+	}
 }
