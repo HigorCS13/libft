@@ -19,13 +19,16 @@ static	size_t	num_len(long int n)
 
 	i = 0;
 	if (n < 0)
+	{
+		n *= -1;
 		i++;
-	while (n != 0)
+	}
+	while (n > 9)
 	{
 		n = n / 10;
 		i++;
 	}
-	return (i);
+	return (i + 1);
 }
 
 static char	*num_str(size_t len, int n, char *num)
@@ -65,12 +68,13 @@ char	*ft_itoa(int n)
 }
 
 /*#include <stdio.h>
+#include <limits.h>
 
 int main()
 {
 	int	n;
 
-	n = -2147483647;
+	n = 0;
 	printf("%s", ft_itoa(n));
 	return (0);
 }*/

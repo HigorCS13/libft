@@ -6,7 +6,7 @@
 /*   By: hicunha- <hicunha-@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/05 20:30:08 by hicunha-          #+#    #+#             */
-/*   Updated: 2023/10/09 13:28:17 by hicunha-         ###   ########.fr       */
+/*   Updated: 2023/10/16 19:52:24 by hicunha-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,7 +76,7 @@ char	**ft_split(char const *s, char c)
 			i += ft_wordln(&s[i], c);
 		}
 	}
-	array[j] = '\0';
+	array[j] = 0;
 	return (array);
 }
 

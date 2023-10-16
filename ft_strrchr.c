@@ -17,7 +17,8 @@ char	*ft_strrchr(const char *s, int c)
 {
 	char	*a;
 
-	a = '\0';
+	if (!*s)
+		return (NULL);
 	while (*s)
 	{
 		if (*s == c)
@@ -36,7 +37,7 @@ int main (void)
     char    *c;
     a = "Higor Cunha Silva";
 
-    b = ft_strrchr(a, 'a');
+    b = ft_strrchr(a, 'u');
     c = strrchr(a, 'a');
     printf("%s\n%s\n", b, c);
     return (0);
