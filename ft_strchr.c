@@ -14,20 +14,14 @@
 
 char	*ft_strchr(const char *s, int c)
 {
-	size_t	i;
-	size_t	len;
-
-	i = 0;
-	//if (!ft_isascii(c))
-	//	return ((char *)s);
-	len = ft_strlen(s);
-	while (i <= len)
+	while (*s)
 	{
-		if (*s == c)
+		if (*s == (char)c)
 			return ((char *)s);
 		s++;
-		i++;
 	}
+	if ((char)c == '\0')
+		return ((char *)s);
 	return (NULL);
 }
 
