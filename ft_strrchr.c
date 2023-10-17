@@ -15,17 +15,22 @@
 
 char	*ft_strrchr(const char *s, int c)
 {
-	char	*a;
+	const char	*a;
 
-	if (!*s)
-		return (NULL);
-	while (*s)
+	a = s;
+	while (*a)
+		a++;
+	while (*s != *a)
 	{
-		if (*s == c)
-			a = ((char *)s);
-		s++;
+		if (*a == (char)c)
+			return ((char *)a);
+		a--;
 	}
-	return (a);
+	if (*a == (char)c)
+		return ((char *)a);
+	if ((char)c == '\0')
+		return ((char *)s);
+	return (NULL);
 }
 
 /*#include <stdio.h>
