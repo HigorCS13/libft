@@ -6,11 +6,19 @@
 /*   By: hicunha- <hicunha-@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/05 20:30:08 by hicunha-          #+#    #+#             */
-/*   Updated: 2023/10/19 16:41:52 by hicunha-         ###   ########.fr       */
+/*   Updated: 2023/10/19 19:40:21 by hicunha-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+static int	ft_free(char **array, int j)
+{
+	while (j-- > 0)
+		free(array[j]);
+	free(array);
+	return (0);
+}
 
 static size_t	ft_wordcount(char const *s, char c)
 {
@@ -28,53 +36,34 @@ static size_t	ft_wordcount(char const *s, char c)
 	return (count);
 }
 
-static size_t	ft_wordln(char const *s, char c)
+static int	splitstr(char const *s, char **new, char c)
 {
 	size_t	i;
+	size_t	j;
+	size_t	v;
 
 	i = 0;
-	while (s[i] && s[i] != c)
-		i++;
-	return (i);
-}
-
-static char	*ft_wordcpy(char const *s, char c)
-{
-	char	*word;
-	size_t	i;
-
-	i = 0;
-	word = malloc(sizeof(char *) * (ft_wordln(s, c) + 1));
-	if (!word)
-		return (NULL);
-	while (s[i] && s[i] != c)
+	j = 0;
+	v = 0;
+	while (s[i])
 	{
-		word[i] = s[i];
-		i++;
+		j = 0;
+		if (s[i] != c)
+		{
+			while (s[i + j] != c && s[i + j])
+				j++;
+			new[v] = ft_substr(s, i, j);
+			if (!new[v])
+				return (ft_free(new, v));
+			v++;
+			i = i + j;
+		}
+		else
+			i++;
 	}
-	word[i] = '\0';
-	return (word);
+	new[v] = NULL;
+	return (1);
 }
-
-/*static void	ft_free_array(char **array)
-{
-	size_t	i;
-
-	i = 0;
-	if (!array)
-		return ;
-	while (array[i])
-	{
-		free(array[i]);
-		i++;
-	}
-	free(array);
-}*/
-			/*if (array[j] == NULL) // below to the filled array[j]
-			{
-				ft_free_array (array);
-				return (NULL);
-			}*/
 
 char	**ft_split(char const *s, char c)
 {
@@ -87,18 +76,8 @@ char	**ft_split(char const *s, char c)
 	array = malloc(sizeof(char *) * (ft_wordcount(s, c) + 1));
 	if (!array)
 		return (NULL);
-	while (s[i])
-	{
-		if (s[i] == c)
-			i++;
-		else
-		{
-			array[j] = ft_wordcpy(&s[i], c);
-			j++;
-			i += ft_wordln(&s[i], c);
-		}
-	}
-	array[j] = 0;
+	if (splitstr(s, array, c) == 0)
+		return (NULL);
 	return (array);
 }
 
