@@ -6,13 +6,13 @@
 /*   By: hicunha- <hicunha-@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/04 00:13:47 by hicunha-          #+#    #+#             */
-/*   Updated: 2023/10/08 18:01:52 by hicunha-         ###   ########.fr       */
+/*   Updated: 2023/10/19 18:16:40 by hicunha-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_atoi(char *str)
+int	ft_atoi(const char *str)
 {
 	int	i;
 	int	res;
