@@ -13,30 +13,13 @@
 #include <stdlib.h>
 #include "libft.h"
 
-char	*ft_strpcpy(char *dest, const char *src_1, const char *src_2)
+static char	*ft_strpcpy(char *dest, const char *src_1, const char *src_2)
 {
-	size_t	i;
-	size_t	j;
-
-	i = 0;
-	j = 0;
-	while (j == 0)
-	{
-		while (src_1[j])
-		{
-			dest[i] = src_1[j];
-			i++;
-			j++;
-		}
-		j = 0;
-		while (src_2[j])
-		{
-			dest[i] = src_2[j];
-			i++;
-			j++;
-		}
-	}
-	dest[i] = '\0';
+	while (*src_1)
+		*dest++ = *src_1++;
+	while (*src_2)
+		*dest++ = *src_2++;
+	*dest = '\0';
 	return (dest);
 }
 
