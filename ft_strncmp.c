@@ -6,7 +6,7 @@
 /*   By: hicunha- <hicunha-@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/04 00:17:09 by hicunha-          #+#    #+#             */
-/*   Updated: 2023/10/05 14:19:23 by hicunha-         ###   ########.fr       */
+/*   Updated: 2023/10/18 13:54:19 by hicunha-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,10 +30,11 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n)
 #include<string.h>
 int main()
 {
-	char *a = "a";
-	char *b = "a";
-	unsigned int c = 2;
+	char *a = "test\200";
+	char *b = "test\0";
+	unsigned int c = 6;
 	
 	printf("%d\n", ft_strncmp(a, b, c));
-	printf("%d", strncmp(a, b, c));
-}*/
+	printf("%d\n", strncmp(a, b, c));
+}
+*/
