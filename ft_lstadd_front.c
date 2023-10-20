@@ -10,6 +10,12 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+/*
+The ft_lstadd_front made an incrementation of a pointed structure in the first 
+position of another pointer of a pointer structure, only if the structures 
+exists.
+*/
+
 #include "libft.h"
 
 void	ft_lstadd_front(t_list **lst, t_list *new)

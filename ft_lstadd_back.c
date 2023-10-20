@@ -10,6 +10,15 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+/*
+The ft_lstadd_back made an incrementation of a pointed structure in th end of 
+another pointer of a pointer structure.
+
+If any of the nodes are NULL, the function returns without create new nodes.
+If the reciver structure is NULL, the function returns the filled node with the 
+new one.
+*/
+
 #include "libft.h"
 
 void	ft_lstadd_back(t_list **lst, t_list *new)

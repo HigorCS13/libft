@@ -10,10 +10,18 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+/*
+The ft_itoa() function converts the int number to a string with the correct 
+memory allocation, terminated by NULL, except that ft_itoa() does not detect 
+malloc() errors.
+
+Return the converted value.
+*/
+
 #include <limits.h>
 #include "libft.h"
 
-static	size_t	num_len(long int n)
+static	size_t	num_len(int n)
 {
 	size_t	i;
 
