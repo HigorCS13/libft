@@ -6,7 +6,7 @@
 /*   By: hicunha- <hicunha-@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/05 20:30:08 by hicunha-          #+#    #+#             */
-/*   Updated: 2023/10/19 19:40:21 by hicunha-         ###   ########.fr       */
+/*   Updated: 2023/10/21 00:31:11 by hicunha-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,11 +68,7 @@ static int	splitstr(char const *s, char **new, char c)
 char	**ft_split(char const *s, char c)
 {
 	char	**array;
-	size_t	i;
-	size_t	j;
 
-	i = 0;
-	j = 0;
 	array = malloc(sizeof(char *) * (ft_wordcount(s, c) + 1));
 	if (!array)
 		return (NULL);
