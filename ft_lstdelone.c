@@ -10,6 +10,12 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+/*
+the ft_lstdelone() takes a pointer struct, and if he's not NULL, the function 
+made a del() for each node existent, adding NULL in each of then.
+Finally, after the node have be deleted, the pointer (lst) is freed.
+*/
+
 #include "libft.h"
 
 void	ft_lstdelone(t_list *lst, void (*del)(void*))

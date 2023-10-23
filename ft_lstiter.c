@@ -10,6 +10,11 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+/*
+the ft_lstitter() made an iteration on the pointer (lst), using the (f) 
+function, if the node isn't NULL.
+*/
+
 #include "libft.h"
 
 void	ft_lstiter(t_list *lst, void (*f)(void *))

@@ -10,6 +10,13 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+/*
+the ft_lstclear() takes a pointer to a pointer struct, and if he's not NULL, 
+the function made a del() for each node existent, adding NULL in each of then.
+Finally, after all nodes have been deleted, the pointer to the pointer (lst) 
+is set to NULL to indicate that the list is empty.
+*/
+
 #include "libft.h"
 
 void	ft_lstclear(t_list **lst, void (*del)(void*))

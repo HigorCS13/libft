@@ -10,6 +10,11 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+/*
+the ft_lstlast() append the node on the last position of the struct.
+If the node is NULL, return NULL.
+*/
+
 #include "libft.h"
 
 t_list	*ft_lstlast(t_list *lst)
