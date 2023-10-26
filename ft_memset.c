@@ -25,7 +25,7 @@ void	*ft_memset(void *s, int c, size_t n)
 	return (s);
 }
 
-/*#include <stdio.h>
+#include <stdio.h>
 
 int main() 
 {
@@ -35,8 +35,8 @@ int main()
 	ft_memset(arr, 6, num_elements * sizeof(int));
     for (size_t i = 0; i < num_elements; i++)
 	{
-        printf("%c ", arr[i]);
+        printf("%d ", (char)arr[i]);
         printf("- %d\n", arr[i]);
     }
     return 0;
-}*/
+}
