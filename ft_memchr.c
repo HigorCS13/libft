@@ -36,7 +36,7 @@ void	*ft_memchr(const void *s, int c, size_t n)
 
 int main() {
     const char *str = "Hello, World!";
-    char ch = 'a';
+    char ch = 'o';
     size_t n = strlen(str);
 
     void *result_1 = memchr(str, ch, n);
